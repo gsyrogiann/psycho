@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EuroLeague Stadium Access Control</title>
+    <style>
+        :root {
+            --bg-color: #050a14;
+            --success-green: #00ff88;
+            --euro-orange: #ff5722;
+        }
+
+        body {
+            margin: 0;
+            background-color: var(--bg-color);
+            color: white;
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        .container {
+            width: 85%;
+            max-width: 400px;
+            text-align: center;
+            padding: 40px 20px;
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 30px;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 20px 50px rgba(0,0,0,0.5);
+        }
+
+        /* Loading Screen Style */
+        #loading-screen {
+            display: block;
+        }
+
+        .basketball-loader {
+            font-size: 80px;
+            display: inline-block;
+            animation: spin 1.2s cubic-bezier(0.68, -0.55, 0.265, 1.55) infinite;
+            margin-bottom: 20px;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg) scale(1); }
+            50% { transform: rotate(180deg) scale(1.2); }
+            100% { transform: rotate(360deg) scale(1); }
+        }
+
+        .loading-text {
+            font-size: 14px;
+            letter-spacing: 3px;
+            color: rgba(255,255,255,0.4);
+            text-transform: uppercase;
+        }
+
+        /* Result Screen Style (Hidden initially) */
+        #result-screen {
+            display: none;
+            animation: fadeIn 0.5s ease-out;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: scale(0.9); }
+            to { opacity: 1; transform: scale(1); }
+        }
+
+        .access-granted {
+            background: rgba(0, 255, 136, 0.1);
+            border: 2px solid var(--success-green);
+            color: var(--success-green);
+            padding: 15px;
+            border-radius: 15px;
+            font-size: 24px;
+            font-weight: 900;
+            text-transform: uppercase;
+            margin-bottom: 25px;
+            box-shadow: 0 0 20px rgba(0, 255, 136, 0.2);
+        }
+
+        .person-name {
+            font-size: 28px;
+            font-weight: 300;
+            margin-bottom: 10px;
+            letter-spacing: 1px;
+        }
+
+        .role-badge {
+            background: var(--euro-orange);
+            color: black;
+            padding: 5px 15px;
+            border-radius: 5px;
+            font-size: 12px;
+            font-weight: 800;
+            text-transform: uppercase;
+            margin-bottom: 30px;
+            display: inline-block;
+        }
+
+        .info-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+            text-align: left;
+            font-size: 12px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            padding-top: 20px;
+        }
+
+        .info-label {
+            color: rgba(255,255,255,0.4);
+            text-transform: uppercase;
+            font-size: 10px;
+            margin-bottom: 3px;
+        }
+
+        .timestamp {
+            margin-top: 30px;
+            font-size: 11px;
+            color: rgba(255,255,255,0.2);
+            font-family: monospace;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <div id="loading-screen">
+            <div class="basketball-loader">🏀</div>
+            <div class="loading-text">Verifying Credentials...</div>
+        </div>
+
+        <div id="result-screen">
+            <div class="access-granted">ACCESS GRANTED</div>
+            
+            <div class="person-name">DR. DIMITRIOS MANOS</div>
+            <div class="role-badge">OFFICIAL MEDICAL STAFF</div>
+
+            <div class="info-grid">
+                <div class="info-item">
+                    <div class="info-label">Organization</div>
+                    <div>N&M ASSOCIATES</div>
+                </div>
+                <div class="info-item">
+                    <div class="info-label">Zones</div>
+                    <div style="color: var(--success-green);">ALL AREAS ACCESS</div>
+                </div>
+                <div class="info-item">
+                    <div class="info-label">Event</div>
+                    <div>FINAL FOUR 2026</div>
+                </div>
+                <div class="info-item">
+                    <div class="info-label">Status</div>
+                    <div>ACTIVE / VALID</div>
+                </div>
+            </div>
+
+            <div class="timestamp" id="timeBox"></div>
+        </div>
+    </div>
+
+    <script>
+        // Simulate a 2.5 second loading for realism
+        setTimeout(() => {
+            document.getElementById('loading-screen').style.display = 'none';
+            document.getElementById('result-screen').style.display = 'block';
+            
+            // Set live timestamp
+            const now = new Date();
+            document.getElementById('timeBox').innerText = "SCAN VERIFIED: " + now.toLocaleString('el-GR') + " | ID: NM-" + Math.random().toString(36).substr(2, 6).toUpperCase();
+        }, 2500);
+    </script>
+</body>
+</html>
