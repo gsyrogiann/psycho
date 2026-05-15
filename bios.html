@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="el">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Βιογραφικά | N&M Associates</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@300;400;600&display=swap');
+        body { font-family: 'Inter', sans-serif; background-color: #f8fafc; }
+        h1, h2, h3 { font-family: 'Playfair Display', serif; }
+        .professional-border { border-left: 3px solid #0f172a; }
+    </style>
+</head>
+<body class="text-slate-800 antialiased flex flex-col min-h-screen">
+
+    <nav class="bg-white border-b border-slate-200 sticky top-0 z-50 shadow-sm">
+        <div class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
+            <div class="font-bold text-xl tracking-tight text-slate-900">
+                <span class="text-slate-500">N&M</span> Associates
+            </div>
+            <div class="space-x-8 text-sm font-medium text-slate-600 flex items-center">
+                <a href="index.html" class="hover:text-slate-900 transition">Αρχική</a>
+                <a href="bios.html" class="text-slate-900 font-bold transition">Βιογραφικά</a>
+                <a href="research.html" class="hover:text-slate-900 transition">Έρευνες</a>
+                <a href="portal.html" class="text-red-600 hover:text-red-800 font-bold border border-red-200 bg-red-50 px-3 py-1 rounded transition">Field Portal</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="flex-grow max-w-6xl mx-auto px-6 py-20">
+        <div class="text-center mb-16">
+            <h1 class="text-4xl font-bold text-slate-900 mb-4">Επιστημονική Ομάδα</h1>
+            <div class="w-16 h-1 bg-slate-900 mx-auto"></div>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-16">
+            
+            <div class="bg-white p-8 rounded-lg shadow-sm border border-slate-100">
+                <div class="flex items-center mb-6">
+                    <img src="doc1.jpeg" alt="Δρ. Αλέξανδρος Νεοφύτου" class="w-24 h-24 rounded-full mr-6 object-cover border-4 border-slate-100 shadow-sm">
+                    <div>
+                        <h3 class="text-2xl font-bold text-slate-900">Δρ. Αλέξανδρος Νεοφύτου, MD</h3>
+                        <p class="text-sm font-semibold text-slate-500 uppercase tracking-wider">Κλινικος Ψυχιατρος</p>
+                    </div>
+                </div>
+                <div class="space-y-4 text-slate-600 text-sm leading-relaxed">
+                    <p class="professional-border pl-4">
+                        Απόφοιτος της Ιατρικής Σχολής του Εθνικού και Καποδιστριακού Πανεπιστημίου Αθηνών, με ειδικότητα στην Κλινική Ψυχιατρική και μετεκπαίδευση στο King's College του Λονδίνου.
+                    </p>
+                    <p>
+                        <strong>Εξειδίκευση:</strong> Διαχείριση κρίσεων πανικού, ψυχολογία της μάζας, και αντιμετώπιση ομαδικής υστερίας σε συνθήκες υψηλής πίεσης.
+                    </p>
+                    <p>
+                        <strong>Εμπειρία:</strong> Έχει διατελέσει σύμβουλος σε οργανισμούς ασφαλείας για την πρόληψη επιθετικών συμπεριφορών σε μεγάλες συγκεντρώσεις και αθλητικά γεγονότα. Αριθμός Μητρώου ΙΣΑ: 045892.
+                    </p>
+                </div>
+            </div>
+
+            <div class="bg-white p-8 rounded-lg shadow-sm border border-slate-100">
+                <div class="flex items-center mb-6">
+                    <img src="doc2.jpeg" alt="Δρ. Δημήτριος Μάνος" class="w-24 h-24 rounded-full mr-6 object-cover border-4 border-slate-100 shadow-sm">
+                    <div>
+                        <h3 class="text-2xl font-bold text-slate-900">Δρ. Δημήτριος Μάνος, PhD</h3>
+                        <p class="text-sm font-semibold text-slate-500 uppercase tracking-wider">Ερευνητης Κοινωνιολογος</p>
+                    </div>
+                </div>
+                <div class="space-y-4 text-slate-600 text-sm leading-relaxed">
+                    <p class="professional-border pl-4">
+                        Διδάκτωρ Κοινωνιολογίας του Παντείου Πανεπιστημίου, με μεταπτυχιακές σπουδές στην Κοινωνική Έρευνα (MSc Social Research) στο LSE.
+                    </p>
+                    <p>
+                        <strong>Εξειδίκευση:</strong> Ανάλυση δυναμικής των ομάδων, κοινωνική ταυτότητα και συμπεριφορά οργανωμένων συνόλων (crowd dynamics).
+                    </p>
+                    <p>
+                        <strong>Εμπειρία:</strong> Επικεφαλής ερευνών πεδίου με δημοσιεύσεις σε διεθνή περιοδικά. Μελετά ενεργά τις κοινωνικές αντιδράσεις σε χώρους συνάθροισης και την επιρροή του "ανήκειν" στις εξτρεμιστικές τάσεις. Αριθμός Μητρώου ΣΕΚ: 1104.
+                    </p>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <footer class="bg-black text-slate-400 py-12 mt-auto">
+        <div class="max-w-6xl mx-auto px-6 grid md:grid-cols-2 gap-12 border-b border-gray-800 pb-12">
+            <div>
+                <h3 class="text-white font-bold text-lg mb-4 text-left">N&M Associates | Κεντρικά Γραφεία</h3>
+                <p class="text-sm mb-2 text-left">Λεωφόρος Βασιλίσσης Σοφίας 86, Τ.Κ. 115 28</p>
+                <p class="text-sm mb-2 text-left">Αθήνα, Ελλάδα (Πλησίον Μεγάρου Μουσικής)</p>
+                <p class="text-sm text-left">Τηλ: +30 210 77 88 4XX</p>
+            </div>
+            <div class="text-right">
+                <h3 class="text-white font-bold text-lg mb-4">Επικοινωνία</h3>
+                <p class="text-sm mb-2">info@nm-associates.gr</p>
+                <p class="text-sm">Δευτέρα - Παρασκευή: 09:00 - 18:00</p>
+            </div>
+        </div>
+        <p class="text-center pt-8 text-xs text-slate-600">© 2026 N&M Associates - Medical & Social Research Institute. All Rights Reserved.</p>
+    </footer>
+
+</body>
+</html>
