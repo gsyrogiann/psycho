@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="el">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Field Portal | N&M Associates</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@300;400;600&display=swap');
+        body { font-family: 'Inter', sans-serif; background-color: #f8fafc; }
+    </style>
+</head>
+<body class="text-slate-800 antialiased flex flex-col min-h-screen">
+
+    <nav class="bg-white border-b border-slate-200 sticky top-0 z-50 shadow-sm">
+        <div class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
+            <div class="font-bold text-xl tracking-tight text-slate-900">
+                <span class="text-slate-500">N&M</span> Associates
+            </div>
+            <div class="space-x-8 text-sm font-medium text-slate-600 flex items-center">
+                <a href="index.html" class="hover:text-slate-900 transition">Αρχική</a>
+                <a href="bios.html" class="hover:text-slate-900 transition">Βιογραφικά</a>
+                <a href="research.html" class="hover:text-slate-900 transition">Έρευνες</a>
+                <a href="portal.html" class="text-red-800 font-bold border border-red-800 bg-red-100 px-3 py-1 rounded transition">Field Portal</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="flex-grow bg-gray-900 py-12 flex flex-col justify-center border-t-4 border-red-700">
+        <div class="max-w-6xl mx-auto px-6 mb-8 text-center w-full">
+            <h1 class="text-2xl font-bold text-white tracking-widest uppercase mb-2">Εσωτερικη Πυλη Δεδομενων</h1>
+            <p class="text-gray-400 text-sm">Ασφαλής σύνδεση: <span class="text-green-500 font-bold">Ενεργή</span> | Πρόσβαση Ερευνητών Πεδίου</p>
+        </div>
+
+        <div class="max-w-md mx-auto bg-gray-800 rounded-xl shadow-2xl overflow-hidden border border-gray-700 w-full">
+            <div class="bg-red-700 p-4 text-center">
+                <h2 class="text-white font-bold uppercase tracking-widest text-sm">Live Field Analysis</h2>
+                <p class="text-red-200 text-xs">Project: Stadium Dynamics 2026</p>
+            </div>
+
+            <form id="surveyForm" class="p-6 space-y-6">
+                <div>
+                    <label class="block text-xs font-semibold text-gray-400 uppercase mb-2">Κωδικός Υποκειμένου (Θύρα/Κάθισμα)</label>
+                    <input type="text" class="w-full p-3 bg-gray-900 border border-gray-600 rounded-lg text-white focus:ring-2 focus:ring-red-500 outline-none" placeholder="π.χ. GATE 7 - ROW 12">
+                </div>
+
+                <div class="space-y-4">
+                    <p class="text-sm font-medium text-white border-l-4 border-red-600 pl-2">Κλινική Παρατήρηση</p>
+                    
+                    <div>
+                        <label class="block text-xs text-gray-400 mb-1">Επίπεδο Συναισθηματικής Διέγερσης (1-5)</label>
+                        <input type="range" min="1" max="5" class="w-full h-2 bg-gray-700 rounded-lg appearance-none cursor-pointer accent-red-600">
+                    </div>
+
+                    <div>
+                        <label class="block text-xs text-gray-400 mb-2">Συμπεριφορική Κατάσταση</label>
+                        <select class="w-full p-3 bg-gray-900 border border-gray-600 rounded-lg text-white outline-none">
+                            <option>Ήρεμος / Παρατηρητής</option>
+                            <option>Έντονη Φωνασκία</option>
+                            <option>Επιθετική Χειρονομία</option>
+                            <option>Κατάσταση Ευφορίας</option>
+                        </select>
+                    </div>
+
+                    <div>
+                        <label class="block text-xs text-gray-400 mb-2">Σημειώσεις Ερευνητή</label>
+                        <textarea class="w-full p-3 bg-gray-900 border border-gray-600 rounded-lg text-white h-24 outline-none" placeholder="Καταγράψτε τυχόν ασυνήθιστες αντιδράσεις..."></textarea>
+                    </div>
+                </div>
+
+                <button type="button" onclick="submitData()" class="w-full bg-red-600 hover:bg-red-700 text-white font-bold py-4 rounded-lg transition-colors shadow-lg">
+                    ΥΠΟΒΟΛΗ ΔΕΔΟΜΕΝΩΝ
+                </button>
+            </form>
+
+            <div id="successMsg" class="hidden p-6 text-center text-green-400 font-bold animate-pulse">
+                DATA SECURELY TRANSMITTED.
+            </div>
+        </div>
+    </main>
+
+    <footer class="bg-black text-slate-500 py-6 text-center text-xs mt-auto">
+        <p>INTERNAL USE ONLY. UNAUTHORIZED ACCESS IS STRICTLY PROHIBITED.</p>
+    </footer>
+
+    <script>
+        function submitData() {
+            document.getElementById('surveyForm').classList.add('hidden');
+            document.getElementById('successMsg').classList.remove('hidden');
+            setTimeout(() => {
+                alert('Επιτυχής καταγραφή. Τα δεδομένα κρυπτογραφήθηκαν και εστάλησαν στον κεντρικό διακομιστή.');
+                // Καθαρισμός και επιστροφή στη φόρμα για τον επόμενο οπαδό
+                document.getElementById('surveyForm').reset();
+                document.getElementById('successMsg').classList.add('hidden');
+                document.getElementById('surveyForm').classList.remove('hidden');
+            }, 2000);
+        }
+    </script>
+</body>
+</html>
